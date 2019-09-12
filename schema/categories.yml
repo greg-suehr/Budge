@@ -1,0 +1,21 @@
+name: categories
+columns:
+  category_id:
+    datatype: INTEGER
+    key: PRIMARY
+  category_name:
+    datatype: TEXT
+    documentation: "Short display name. Lowercase recommended."
+  category_display:
+    datatype: TEXT
+    documentation: "Long, punctuated display name."
+  icon_id:
+    datatype: INTEGER
+    documentation: "Stored icon for display."
+  color_id:
+    datatype: INTEGER
+    documentation: "Display color for reports."
+relations:
+  icons:
+    local: icon_id
+    foreign: icon_id

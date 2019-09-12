@@ -1,0 +1,27 @@
+name: transactions
+columns:
+  transaction_id:
+    datatype: INTEGER
+    key: PRIMARY
+  category_id:
+    datatype: INTEGER
+    documentation: "Foreign key, exclusive?"
+  description:
+    datatype: TEXT
+    documentation: "Import memo."
+  memo:
+    datatype: TEXT
+    documentation: User memo."
+  inflow:
+    datatype: REAL
+    documentation: "Money in."
+  outflow:
+    datatype: REAL
+    documentation: "Money out."
+  date:
+    datatype: TEXT
+    documenation: "Not the day it happened?"
+relations:
+  categories:
+    local: cateogory_id
+    foreign: category_id

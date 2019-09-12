@@ -1,0 +1,14 @@
+name: tags
+columns:
+  tag_id:
+    datatype: INTEGER
+    key: PRIMARY
+  tag_name:
+    datatype: TEXT
+    documentation: "Short display name. Lowercase recommeneded."
+  tag_display:
+    datatype: TEXT
+    documentation: "Long, punctuated display name."
+  color_id:
+    datatype: INTEGER
+    documentation: "Color for display."

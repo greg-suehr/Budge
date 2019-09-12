@@ -1,0 +1,5 @@
+name: imports
+columns:
+  import_id:
+    datatype: integer
+    key: primary

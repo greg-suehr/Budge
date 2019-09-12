@@ -1,0 +1,7 @@
+name: budgets
+columns:
+  budget_id: 
+    datatype: INTEGER
+    key: PRIMARY
+  budget_name:
+    datatype: TEXT

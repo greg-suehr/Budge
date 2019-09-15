@@ -9,7 +9,7 @@
 	<div style="display: flex">
 		<div class="budget-card" id="budget-card" style="width:30%;">
 			<div class="card" id="my_budget_card">
-				<div class="card-body" style="width: 100%;>
+				<div class="card-body" style="width: 100%;">
 					<img src="https://icon-library.net/images/avatar-icon/avatar-icon-6.jpg" height="60" width="60">
 					<h5 class="card-title">My Budget</h5>
 					<div id="button_box"> <!-- style="display: flex"> -->
@@ -28,6 +28,17 @@
 				<table class="transaction-table table" id="transaction_table">
 					<thead class="table-nav" id="transaction_table_nav"></thead>
 					<tbody class="table-results" id="transaction_table_results">
+
+					<!-- rip from https://stackoverflow.com/questions/53696647/get-python-data-in-an-html-javascript-webpage -->
+					<!-- currently does nothing -->
+					<script>
+					  $.get("budgebasic/serve_transactions.py", 
+					  function(data) {
+					      $(".text").html(data);
+					  });
+					</script>
+					<tr class="transaction table-row" id="transaction-16"><th><input type="checkbox"></input><td>06/24/2019</td><td>ATM WITHDRAWAL        PNCPJ1892 N0622 6868 2603 E. CARSON ST.       PITTSBURGH   PA</td><td>---</td><td>0.0</td><td>20.0</td><td>&#9658;</td></tr>
+					<tr class="transaction table-row" id="transaction-16"><th><input type="checkbox"></input></th><td><img src="https://cdn1.iconfinder.com/data/icons/social-17/48/photos2-512.png" height="32" width="32"></td><td>06/24/2019</td><td>ATM WITHDRAWAL        PNCPJ1892 N0622 6868 2603 E. CARSON ST.       PITTSBURGH   PA</td><td>---</td><td>0.0</td><td>20.0</td><td>&#9658;</td></tr>
 					<tr class="transaction table-row" id="transaction_id-1">
 						<th>
 						<input type="checkbox"></input>

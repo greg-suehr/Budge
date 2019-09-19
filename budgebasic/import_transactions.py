@@ -79,11 +79,6 @@ def load_transactions_from_file(connection, file, delimiter=",", payload_mapping
 # script
 
 conn = sqlite3.connect("budge.db")
+
 payload_mapping = {'description': 1, 'date': 0, 'inflow': 4, 'outflow': 5}
-
-response = input("I'm not going to reset the database, just pile on more transcactions.\nYou sure? (y/n): ")
-if response == "y":
-    load_transactions_from_file(conn, "june_transactions.tsv", delimiter="\t", payload_mapping=payload_mapping)
-else:
-    print("ok.")
-
+load_transactions_from_file(conn, "june_transactions.tsv", delimiter="\t", payload_mapping=payload_mapping)

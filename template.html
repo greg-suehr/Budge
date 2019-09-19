@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css"> <!-- load custom CSS after bootstrap -->
+	<title>Transactions | Budge</title>
+</head>
+<body>
+	<!-- https://getbootstrap.com/docs/4.3/components/navbar/ -->
+	<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">Budge</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"> <!-- aria attributes are important accessibilies -->
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="/app">Budget<span class="sr-only">(active)</span></a> <!-- s[creen]r[reader]-only is another important accessibility -->
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/files">Files</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/help">Help</a>
+				</li>
+				
+				<li class="nav-item">
+					<a class="nav-link" href="/account">Account</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/logout">Logout</a>
+				</li>
+				
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" type="search" aria-label="search" placeholder="Search">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			</form>
+		</div>
+	</nav>
+	<div style="display: flex">
+		<div class="budget-card" id="budget-card" style="width:30%;">
+			<div class="card" id="my_budget_card">
+				<div class="card-body" style="width: 100%;">
+					<img src="https://icon-library.net/images/avatar-icon/avatar-icon-6.jpg" height="60" width="60">
+					<h5 class="card-title">My Budget</h5>
+					<div id="button_box" style="display: flex; flex-direction: column"> <!-- style="display: flex"> -->
+    					<a href="#" class="btn btn-primary" id="budget_view_button">Budget</a>
+     					<a href="#" class="btn btn-primary" id="reports_view_button">Reports</a>  
+    					<a href="#" class="btn btn-primary" id="transactions_view_button">Transactions</a>
+    					<a href="#" class="btn btn-primary" id="categories_view_button">Categories</a>    
+    					<a href="#" class="btn btn-primary" id="account_view_button">My Account</a>  
+    				</div>
+    			</div>
+			</div>
+		</div>
+
+		<div class="budget-view" id="budget_view" style="width:70%;">
+			<div class="budget-summary-view" id="budget_summary_view"></div>
+				<table class="transaction-table table" id="transaction_table">
+					<thead class="table-nav" id="transaction_table_nav"></thead>
+					<tbody class="table-results" id="transaction_table_results">
+
+					<!-- rip from https://stackoverflow.com/questions/53696647/get-python-data-in-an-html-javascript-webpage -->
+					<!-- currently does nothing -->
+					<script>
+					  $.get("budgebasic/serve_transactions.py", 
+					  function(data) {
+					      $(".text").html(data);
+					  });
+					</script>
+					<tr class="transaction table-row" id="transaction-59"><th><input type="checkbox"></input></th><td><img src="https://cdn1.iconfinder.com/data/icons/social-17/48/photos2-512.png" height="32" width="32"></td><td>06/05/2019</td><td>ACH DEBIT       XXXX</td><td>---</td><td>0.0</td><td>152.5</td><td>&#9658;</td></tr>
+				</tbody>	
+			</table>
+		</div>
+	</div>
+
+</body>
+</html>

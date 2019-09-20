@@ -1,0 +1,12 @@
+:root { --primary: #007E65;
+		--primary-light: #009172;	
+		--primary-lighter: #09A884;
+		--primary-lightest: #2EBD99;
+		--primary-dark: #005042;
+		--primary-darker: #003B30;
+		--primary-darkest: #002721;
+		--primary-bold: #007E65;
+		--primary-pale: #A7E8D4;
+		--near-white: #E4F2ED; 
+		--near-white-alt: #F5E9ED;
+	}

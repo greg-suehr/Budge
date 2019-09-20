@@ -1,28 +1,40 @@
-/*
-  BACKGROUND #8DA7BE
-  ACCENT (BROWN) #554640
-  ELEMENT #CDE6F5
-  LIGHT BODY #87919E
-  DARK BODY  #707078
-*/
+@import url("colors.css");
 
 body {
-	background-color: #8DA7BE;
+	background-color: var(--primary-dark);
+}
+
+.sidecard {
+	width: 38%;
+	min-width: 150px;
+	max-width: 260px;
+}
+
+#sidecard { /* why? */
+	background-color: var(--near-white);
+}
+
+.sidecard-btn {
+	margin: 1px;
+
+	border-color: white;
+	background-color: var(--primary);
 }
 
 .budget-view {
 
 }
 
+
 .transaction-table{
-	background-color: #CDE6F5;
+	background-color: white;
 	border-color: black;
-	border: 10px;
-	padding: 5px;
+	border: 3px;
+	margin: 5px;
 }
 
 .transaction {
-	background-color: #CDE6F5;
+	background-color: var(--near-white);
 	border-color: black;
 	border-width: 1px;
 	border-style: solid;

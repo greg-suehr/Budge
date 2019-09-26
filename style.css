@@ -4,6 +4,10 @@ body {
 	background-color: var(--primary-dark);
 }
 
+th, td {
+	padding: 15px;
+}
+
 .sidecard {
 	width: 38%;
 	min-width: 150px;
@@ -16,17 +20,28 @@ body {
 
 .sidecard-btn {
 	margin: 1px;
+	width: 100%;
 
 	border-color: white;
 	background-color: var(--primary);
 }
 
-.budget-view {
+.budgetSummary {
+	display: flex;
+
+	background-color: var(--near-white);
+}
+
+.budgetSummary-headers {
+	height: 100%;
+	width: 76%;
+}
+
+.budgetSummary-chart {
 
 }
 
-
-.transaction-table{
+.transactionTable{
 	background-color: white;
 	border-color: black;
 	border: 3px;
@@ -38,5 +53,7 @@ body {
 	border-color: black;
 	border-width: 1px;
 	border-style: solid;
-	padding: 5px;
+	padding: 1px;
+	font-size: 12px;
 }
+

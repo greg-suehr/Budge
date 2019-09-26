@@ -67,7 +67,6 @@ def load_transactions_from_file(connection, file, delimiter=",", payload_mapping
         insert_sql = insert_sql[:-1] # remove one of two trailing commas, no rstrip
         insert_sql += ")"
 
-        print(insert_sql)
         try:
             c.execute(insert_sql)
             conn.commit()

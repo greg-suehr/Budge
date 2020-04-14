@@ -41,17 +41,19 @@ def create_table_from_yaml(schema_dict, db_cursor, validate=False):
         return error
 
 
-# Script
+if __name__ == "__main__":
+    db_name = input("Specify the path and filename for the sqlite database: ")
+    conn = sqlite3.connect(db_name)
+    c = conn.cursor()
 
-conn = sqlite3.connect('budge.db')
-c = conn.cursor()
+    yaml_dir = input("Specify the path to a directory containing YAML schema files: ")
+    for schema_file in os.listdir(yaml_dir): # TODO: fix this path when it breaks
+        if schema_file.endswith('.yml'):
+            schema = create_schema_dict_from_yaml(yaml_dir + "/" +  schema_file)
 
-for schema_file in os.listdir("../schema"): # TODO: fix this path when it breaks
-    schema = create_schema_dict_from_yaml("../schema/" + schema_file)
-
-    print("on %s" % schema_file)
-    response = create_table_from_yaml(schema, c)
-    if response is not None: print(response)
+            print("on %s" % schema_file)
+            response = create_table_from_yaml(schema, c)
+            if response is not None: print(response)
 
 
 

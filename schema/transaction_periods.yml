@@ -1,0 +1,6 @@
+name: transaction_periods
+columns:
+  transaction_id:
+    datatype: integer
+  period_id:
+    datatype: integer

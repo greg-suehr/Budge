@@ -1,5 +1,0 @@
-name: months
-columns:
-  month_id:
-    datatype: integer
-    key: primary

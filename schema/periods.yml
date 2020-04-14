@@ -1,0 +1,7 @@
+name: periods
+columns:
+  period_id:
+    datatype: integer
+    key: primary
+  name:
+    datatype: text

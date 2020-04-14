@@ -25,7 +25,7 @@ def validate_payload_mapping(payload_mapping):
         return True
 
 
-def load_transactions_from_file(connection, file, delimiter=",", payload_mapping=None, paystore_format=None):
+def load_transactions_from_file(conn, file, delimiter=",", payload_mapping=None, paystore_format=None):
     """Inserts records to `transactions` from a csv file.
 
        If a payload_mapping is not provided, prompt the user. Reprompt and show an
